@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"/>
+    <title>Tic Tac Toe</title>
+</head>
+<body>
+    <div class="choice">
+        <img src="hi-kawai.jpg " width="100" height ="100" alt="hi" class="hello">
+        <h2>Tic Tac Toe</h2>
+        <p>Select your Player</p>
+        <div class="players">
+            <button class="player" onclick="playerSelect('X')">X</button>
+            <button class="player" onclick="playerSelect('O')">O</button>
+        </div>
+    </div>
+
+    <div class="game-container">
+        <div class="board">
+            <button class="cell" id="0"></button>
+            <button class="cell" id="1"></button>
+            <button class="cell" id="2"></button>
+            <button class="cell" id="3"></button>
+            <button class="cell" id="4"></button>
+            <button class="cell" id="5"></button>
+            <button class="cell" id="6"></button>
+            <button class="cell" id="7"></button>
+            <button class="cell" id="8"></button>
+        </div>
+        <button class="reset" onclick="startGame()">Restart</button>
+        <div class="music" >
+            <img src="speaker.png" width="40" height="40" alt="Speaker"  id="speaker" class="speaker" onclick="toggleMusic()">
+            <audio id ="back-music"  autoplay loop >
+                <source src ="ticmusic.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+    
+            </audio>
+            </div>
+        </div>
+    </div>
+
+    <div class="winner">
+        <h3></h3>
+        <video id="winner-video" loop>
+            <source src="tie.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <video id="winner-gif" loop style="display: none;">
+            <source src="win1.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button class="reset" onclick="startGame()">Play Again</button>
+    </div>
+   
+
+    <script src="app.js"></script>
+</body>
+</html>
