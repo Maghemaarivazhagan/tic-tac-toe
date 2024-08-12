@@ -1,7 +1,7 @@
 const choice = document.querySelector('.choice');
 const Board = document.querySelector('.game-container');
 const winner = document.querySelector('.winner');
-const winnerVideo = document.getElementById('winner-video'); // Reference to tie video element
+const winnerVideo = document.getElementById('winner-video'); 
 const winnerGif = document.getElementById('winner-gif'); 
 
 function toggleMusic() {
@@ -10,16 +10,12 @@ function toggleMusic() {
 
     if (music.paused) {
         music.play(); // Start playing the music
-        speaker.classList.remove("active"); // Remove the active class to revert background
+        speaker.classList.remove("active"); 
     } else {
         music.pause(); // Pause the music
-        speaker.classList.add("active"); // Add the active class to change background
+        speaker.classList.add("active");
     }
 }
-
-
-
-
 
 let gameBoard, user = 'X', computer = 'O';
 const cells = document.querySelectorAll('.cell');
@@ -66,9 +62,8 @@ const startGame = () => {
         cell.style.background = '#adbce6';
     });
 
-    winnerVideo.style.display = 'none'; // Hide video on game restart
-    winnerGif.style.display = 'none'; // Hide win video on game restart
-}
+    winnerVideo.style.display = 'none';
+    winnerGif.style.display = 'none'; 
 
 const handleClick = gameSpace => {
     if (typeof gameBoard[gameSpace.target.id] === 'number') {
@@ -122,16 +117,16 @@ const declareWinner = message => {
     winner.querySelector('h3').innerHTML = message;
 
     if (message === "Computer Won The Game!") {
-        winnerVideo.style.display = 'none'; // Hide tie video if showing
-        winnerGif.style.display = 'block'; // Show win video
+        winnerVideo.style.display = 'none'; 
+        winnerGif.style.display = 'block';
         winnerGif.play(); // Ensure video starts playing
     } else if (message === "The Game Is Tie!") {
-        winnerGif.style.display = 'none'; // Hide win video if showing
-        winnerVideo.style.display = 'block'; // Show tie video
-        winnerVideo.play(); // Ensure video starts playing
+        winnerGif.style.display = 'none'; 
+        winnerVideo.style.display = 'block'; 
+        winnerVideo.play();
     } else {
-        winnerGif.style.display = 'none'; // Hide win video if showing
-        winnerVideo.style.display = 'none'; // Hide tie video if showing
+        winnerGif.style.display = 'none'; 
+        winnerVideo.style.display = 'none'; 
     }
 
     setTimeout(() => {
